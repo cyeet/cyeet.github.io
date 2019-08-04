@@ -1,0 +1,21 @@
+<header class="header">
+    <div class="wrap">
+        <a href="/" class="header__title cc-active">
+            <img src="assets/img/logo.png" />
+        </a>
+        <div class="menu">
+            <div class="menu__toggle js-menu-toggle">
+                <div class="menu__toggle__icon"><span></span></div>
+            </div>
+            <div class="menu__wrap">
+                <ul class="menu__list">
+                    {% for nav in site.data.navigation %}
+                        <li class="menu__list__item">
+                            <a href="{{ nav.link }}" class="menu__list__item__link">{{ nav.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
