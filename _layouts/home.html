@@ -14,7 +14,7 @@ layout: default
 
         <div class="content-wrap portfolio-wrap">
             <div class="masonry">
-                {% assign image_files = site.static_files | where: "image", true | reverse_sort: "modified_time" %}
+                {% assign image_files = site.static_files | where: "image", true | sort: "modified_time" %}
                 {% for img in image_files %}
                 <div class="brick">
                     <a class="portfolio-item__link" href="{{ img.path }}">
