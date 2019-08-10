@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-<div class="page__content" data-page-title="Duet – A beautiful two-column Jekyll theme"
-    data-cms-content-wrapper="/_layouts/default.html">
+
+<div class="page__content">
 
     <section class="intro">
         <div class="wrap">
@@ -11,7 +11,6 @@ layout: default
     </section>
 
     <section class="portfolio">
-
         <div class="content-wrap portfolio-wrap">
             <div class="masonry">
                 {% assign image_files = site.static_files | where: "image", true | sort: "modified_time" %}
@@ -30,7 +29,6 @@ layout: default
                     </a>
                 </div>
                 {% endfor %}
-
             </div>
         </div>
     </section>
