@@ -1,140 +1,38 @@
 ---
 layout: default
 ---
+<div class="page__content" data-page-title="Duet – A beautiful two-column Jekyll theme"
+    data-cms-content-wrapper="/_layouts/default.html">
 
-<section class="portfolio">
+    <section class="intro">
+        <div class="wrap">
+            <h1>Do all things with love.</h1>
+        </div>
+    </section>
 
-    <div class="content-wrap portfolio-wrap">
+    <section class="portfolio">
 
-        {% for post in site.posts %}
-            <div class="portfolio-item">
-                <a class="portfolio-item__link" href="{{ post.url }}">
-                    <div class="portfolio-item__image">
-                        <img src="{{ post.img_src }}" alt="{{ post.title }}" />
-                    </div>
-
-                    <div class="portfolio-item__content">
-                        <div class="portfolio-item__info">
-                            <h2 class="portfolio-item__title">{{ post.title }}</h2>
-                            <p class="portfolio-item__subtitle">Mural and illustration</p>
+        <div class="content-wrap portfolio-wrap">
+            <div class="masonry">
+                {% assign image_files = site.static_files | where: "image", true | reverse_sort: "modified_time" %}
+                {% for img in image_files %}
+                <div class="brick">
+                    <a class="portfolio-item__link" href="{{ img.path }}">
+                        <img src="{{ img.path }}" alt="{{ img.basename }}" />
+                        <div class="portfolio-item__content">
+                            <div class="portfolio-item__info">
+                                <h2 class="portfolio-item__title">{{ img.basename | capitalize }}</h2>
+                                <p class="portfolio-item__subtitle">
+                                    {{ img.modified_time | date_to_long_string: "ordinal" }}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
+                {% endfor %}
+
             </div>
-        {% endfor %}
-
-
-
-        <div class="portfolio-item">
-
-            <a class="portfolio-item__link" href="/project/thirty-four">
-
-                <div class="portfolio-item__image">
-                    <img src="https://d1qmdf3vop2l07.cloudfront.net/chartreuse-kouprey.cloudvent.net/compressed/_min_/698d6ef56fdb6a6713dac6100828aca3.jpg"
-                        alt="Thirty Four" data-cms-original-src="/images/demo/landscape-05.jpg" />
-                </div>
-
-                <div class="portfolio-item__content">
-                    <div class="portfolio-item__info">
-                        <h2 class="portfolio-item__title">Thirty Four</h2>
-                        <p class="portfolio-item__subtitle">Paint and foliage</p>
-                    </div>
-                </div>
-
-            </a>
-
         </div>
+    </section>
 
-
-
-        <div class="portfolio-item">
-
-            <a class="portfolio-item__link" href="/project/colored-stripes">
-
-                <div class="portfolio-item__image">
-                    <img src="https://d1qmdf3vop2l07.cloudfront.net/chartreuse-kouprey.cloudvent.net/compressed/_min_/2adf40a99be457212d4420ecbdac601a.jpg"
-                        alt="Colored stripes" data-cms-original-src="/images/demo/square-02.jpg" />
-                </div>
-
-                <div class="portfolio-item__content">
-                    <div class="portfolio-item__info">
-                        <h2 class="portfolio-item__title">Colored stripes</h2>
-                        <p class="portfolio-item__subtitle">Wall painting</p>
-                    </div>
-                </div>
-
-            </a>
-
-        </div>
-
-
-
-        <div class="portfolio-item">
-
-            <a class="portfolio-item__link" href="/project/block-patterns">
-
-                <div class="portfolio-item__image">
-                    <img src="https://d1qmdf3vop2l07.cloudfront.net/chartreuse-kouprey.cloudvent.net/compressed/_min_/61a862741a723623e1d00503d0398498.jpg"
-                        alt="Block Patterns" data-cms-original-src="/images/demo/portrait-05.jpg" />
-                </div>
-
-                <div class="portfolio-item__content">
-                    <div class="portfolio-item__info">
-                        <h2 class="portfolio-item__title">Block Patterns</h2>
-                        <p class="portfolio-item__subtitle">Geometric street art</p>
-                    </div>
-                </div>
-
-            </a>
-
-        </div>
-
-
-
-        <div class="portfolio-item">
-
-            <a class="portfolio-item__link" href="/project/atlanta-made">
-
-                <div class="portfolio-item__image">
-                    <img src="https://d1qmdf3vop2l07.cloudfront.net/chartreuse-kouprey.cloudvent.net/compressed/_min_/fec2c6c5c817fc9b412e1a9fb1562a5d.jpg"
-                        alt="Atlanta Made" data-cms-original-src="/images/demo/portrait-02.jpg" />
-                </div>
-
-                <div class="portfolio-item__content">
-                    <div class="portfolio-item__info">
-                        <h2 class="portfolio-item__title">Atlanta Made</h2>
-                        <p class="portfolio-item__subtitle">Warehouse mural</p>
-                    </div>
-                </div>
-
-            </a>
-
-        </div>
-
-
-
-        <div class="portfolio-item">
-
-            <a class="portfolio-item__link" href="/project/coffee-cup">
-
-                <div class="portfolio-item__image">
-                    <img src="https://d1qmdf3vop2l07.cloudfront.net/chartreuse-kouprey.cloudvent.net/compressed/_min_/43bdb538a48a6179f177a108de24406b.jpg"
-                        alt="Coffee Cup" data-cms-original-src="/images/demo/landscape-03.jpg" />
-                </div>
-
-                <div class="portfolio-item__content">
-                    <div class="portfolio-item__info">
-                        <h2 class="portfolio-item__title">Coffee Cup</h2>
-                        <p class="portfolio-item__subtitle">Coffee art project</p>
-                    </div>
-                </div>
-
-            </a>
-
-        </div>
-
-
-
-    </div>
-
-</section>
+</div>
