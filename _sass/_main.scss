@@ -475,7 +475,7 @@
    transition: all 0.15s ease-in-out;
  }
  a:hover {
-   color: #f2784b;
+   color: #FFD300;
  }
 
 
@@ -567,7 +567,7 @@ section {
   color: #2a2f36;
 }
 .header__title:hover {
-  color: #f2784b;
+  color: #FFD300;
 }
 @media only screen and (min-width: 768px) {
   .header__title {
@@ -677,7 +677,7 @@ section {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(242, 120, 75, 0.95);
+  background: rgba(255, 211, 0, 0.95);
   overflow: auto;
   visibility: hidden;
   opacity: 0;
@@ -948,7 +948,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 211, 0, 0.8);
+  background: rgba(255, 211, 0, 0.3);
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.2s ease-in-out;
@@ -961,7 +961,7 @@ section {
   text-align: center;
 }
 .portfolio-item__title {
-  color: #fff;
+  color: white;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -978,7 +978,7 @@ section {
 }
 .portfolio-item__subtitle {
   margin-top: 5px;
-  color: rgba(255, 255, 255, 0.7);
+  color: white;
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 0;
@@ -992,4 +992,8 @@ section {
   .portfolio-item__subtitle {
     font-size: 19px;
   }
+}
+
+.mr-1 {
+  margin-right: 1rem;
 }
