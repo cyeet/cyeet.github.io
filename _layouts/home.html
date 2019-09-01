@@ -16,7 +16,7 @@ layout: default
                 {% assign image_files = site.static_files | where: "image", true | sort: "modified_time" %}
                 {% for img in image_files %}
                 <div class="brick">
-                    <a class="portfolio-item__link" href="{{ img.path }}">
+                    <a data-fancybox="gallery" class="portfolio-item__link" href="{{ img.path }}">
                         <img src="{{ img.path }}" alt="{{ img.basename }}" />
                         <div class="portfolio-item__content">
                             <div class="portfolio-item__info">
